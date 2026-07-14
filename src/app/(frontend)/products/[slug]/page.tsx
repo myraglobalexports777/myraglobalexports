@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { ShareButtons } from '@/components/shared/ShareButtons'
+import { ProductImagePlaceholder } from '@/components/shared/ProductImagePlaceholder'
 import type { Product, ProductImage } from '@/types/database'
 import { buildSpecRows, getSpecIconKey, type SpecIconKey } from '@/lib/product-specs'
 import {
@@ -198,17 +199,7 @@ export default async function ProductDetailPage({
                     className="object-cover"
                   />
                 ) : (
-                  <>
-                    <span className="text-9xl select-none" aria-hidden="true">
-                      {typedProduct.emoji || '🌾'}
-                    </span>
-                    <div
-                      className="absolute inset-0 rounded-2xl"
-                      style={{
-                        background: `radial-gradient(circle at 30% 30%, ${accentColor}20, transparent 70%)`,
-                      }}
-                    />
-                  </>
+                  <ProductImagePlaceholder emoji={typedProduct.emoji} accentColor={accentColor} />
                 )}
               </div>
             </div>

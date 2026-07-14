@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
+import { ProductImagePlaceholder } from '@/components/shared/ProductImagePlaceholder'
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -110,14 +111,10 @@ export default async function ProductsPage({
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
-                    <div
-                      className="flex h-full flex-col items-center justify-center"
-                      style={{ background: `${product.accent_color}15` }}
-                    >
-                      <span className="text-5xl" aria-hidden="true">
-                        {(product.emoji as string) || '🌾'}
-                      </span>
-                    </div>
+                    <ProductImagePlaceholder
+                      emoji={product.emoji as string | null}
+                      accentColor={product.accent_color as string | null}
+                    />
                   )}
                 </div>
                 <div className="p-6 flex flex-col flex-1 border-t border-fog">

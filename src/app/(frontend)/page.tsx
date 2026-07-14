@@ -56,7 +56,7 @@ export default async function HomePage() {
   const [{ data: rawProducts }, { data: rawCerts }] = await Promise.all([
     supabase
       .from('products')
-      .select('id, name, slug, category, short_description, images')
+      .select('id, name, slug, category, short_description, images, emoji, accent_color')
       .eq('is_published', true)
       .eq('is_future', false)
       .order('display_order')
@@ -74,6 +74,8 @@ export default async function HomePage() {
     category: p.category,
     shortDescription: p.short_description,
     images: (p.images as ProductImage[]).map((img) => ({ image: img })),
+    emoji: p.emoji,
+    accentColor: p.accent_color,
   }))
 
   const certificates = (rawCerts ?? []).map((c) => ({

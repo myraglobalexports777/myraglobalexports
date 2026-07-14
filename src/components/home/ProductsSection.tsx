@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { ProductImagePlaceholder } from '@/components/shared/ProductImagePlaceholder'
 
 type ProductImage = {
   image: {
@@ -15,6 +16,8 @@ type Product = {
   category?: string | null
   shortDescription?: string | null
   images?: ProductImage[] | null
+  emoji?: string | null
+  accentColor?: string | null
 }
 
 type Props = { products: Product[] }
@@ -80,9 +83,7 @@ export function ProductsSection({ products }: Props) {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
-                    <div className="flex h-full flex-col items-center justify-center gap-2 p-6">
-                      <span className="text-5xl" aria-hidden="true">🌾</span>
-                    </div>
+                    <ProductImagePlaceholder emoji={product.emoji ?? null} accentColor={product.accentColor ?? null} />
                   )}
                 </div>
 
