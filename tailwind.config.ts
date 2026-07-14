@@ -11,9 +11,9 @@ const config: Config = {
         bark: '#3D2B1A',
         sage: '#4A6741',
         'brand-green': {
-          DEFAULT: '#0D3B1A',
-          light: '#1B5E20',
-          dark: '#071F0D',
+          DEFAULT: '#1C3D69',
+          light: '#2A5490',
+          dark: '#122A4A',
         },
         'brand-gold': {
           DEFAULT: '#C8882A',

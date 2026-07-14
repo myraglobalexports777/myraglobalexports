@@ -7,13 +7,13 @@
   --fog: #E8DFD0;
   --stone: #8B7B5E;
   --bark: #3D2B1A;
-  --forest: #0D3B1A;
+  --forest: #1C3D69;
   --amber: #C8882A;
 
   /* Admin panel */
   --admin-bg: #EFE9DF;
-  --admin-sidebar: #0D3B1A;
-  --admin-sidebar-hover: #163d22;
+  --admin-sidebar: #1C3D69;
+  --admin-sidebar-hover: #24487D;
   --admin-sidebar-active-bg: rgba(200, 136, 42, 0.16);
   --admin-sidebar-active-text: #E8A030;
   --admin-sidebar-text: rgba(250, 246, 238, 0.7);
@@ -29,7 +29,7 @@
   --card-foreground: 29 40% 17%;
   --popover: 40 30% 97%;
   --popover-foreground: 29 40% 17%;
-  --primary: 137 64% 14%;
+  --primary: 214 58% 26%;
   --primary-foreground: 40 30% 97%;
   --secondary: 38 30% 90%;
   --secondary-foreground: 29 40% 17%;
@@ -41,7 +41,7 @@
   --destructive-foreground: 40 30% 97%;
   --border: 40 20% 82%;
   --input: 40 20% 82%;
-  --ring: 137 64% 14%;
+  --ring: 214 58% 26%;
   --radius: 0.5rem;
 }
 
