@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { ShareButtons } from '@/components/shared/ShareButtons'
+import { SetCurrentProduct } from '@/components/shared/CurrentProductContext'
 import { ProductImagePlaceholder } from '@/components/shared/ProductImagePlaceholder'
 import type { Product, ProductImage } from '@/types/database'
 import { buildSpecRows, getSpecIconKey, type SpecIconKey } from '@/lib/product-specs'
@@ -133,6 +134,7 @@ export default async function ProductDetailPage({
     <div className="bg-cream min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <SetCurrentProduct name={typedProduct.name} />
       {/* Hero */}
       <div
         className="relative overflow-hidden"
