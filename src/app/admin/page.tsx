@@ -2,7 +2,7 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { Package, Users, UserCheck, Newspaper } from 'lucide-react'
 
 const STAT_ICONS = [Package, Users, UserCheck, Newspaper]
-const STAT_COLORS = ['#0D3B1A', '#C8882A', '#8B4A1A', '#1A3B2A']
+const STAT_COLORS = ['#1C3D69', '#C8882A', '#8B4A1A', '#3D5A80']
 
 export default async function AdminDashboard() {
   const supabase = createAdminClient()

@@ -106,7 +106,7 @@ export default async function ProductDetailPage({
       {/* Hero */}
       <div
         className="relative overflow-hidden"
-        style={{ background: `linear-gradient(135deg, #0D3B1A 0%, #071F0D 100%)` }}
+        style={{ background: `linear-gradient(135deg, #1C3D69 0%, #122A4A 100%)` }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
@@ -393,8 +393,8 @@ export default async function ProductDetailPage({
                 {['30+ export destinations', 'Lab tested every batch', 'Phytosanitary certified', 'Custom packaging available'].map((point) => (
                   <div key={point} className="flex items-start gap-2.5">
                     <svg width="12" height="12" viewBox="0 0 12 12" className="shrink-0 mt-0.5">
-                      <circle cx="6" cy="6" r="5" fill="none" stroke="#0D3B1A" strokeWidth="1" />
-                      <path d="M3.5 6l2 2 3-3" stroke="#0D3B1A" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="6" cy="6" r="5" fill="none" stroke="#1C3D69" strokeWidth="1" />
+                      <path d="M3.5 6l2 2 3-3" stroke="#1C3D69" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <span className="font-sans text-[13px] text-bark/65 leading-snug">{point}</span>
                   </div>

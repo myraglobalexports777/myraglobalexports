@@ -3,7 +3,7 @@ import { updateLeadStatus } from './actions'
 
 const STATUS_STYLES = {
   new: { bg: 'rgba(200,136,42,0.12)', text: '#8B5E1A', label: 'New' },
-  contacted: { bg: 'rgba(13,59,26,0.1)', text: '#0D3B1A', label: 'Contacted' },
+  contacted: { bg: 'rgba(28,61,105,0.1)', text: '#1C3D69', label: 'Contacted' },
   closed: { bg: 'rgba(42,28,12,0.08)', text: '#5A3E25', label: 'Closed' },
 } as const
 

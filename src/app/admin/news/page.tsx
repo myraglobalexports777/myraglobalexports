@@ -73,7 +73,7 @@ export default async function AdminNewsPage() {
                     className="text-xs font-medium px-2 py-0.5 rounded-full"
                     style={
                       p.is_published
-                        ? { backgroundColor: 'rgba(13,59,26,0.1)', color: '#0D3B1A' }
+                        ? { backgroundColor: 'rgba(28,61,105,0.1)', color: '#1C3D69' }
                         : { backgroundColor: 'rgba(42,28,12,0.08)', color: 'var(--admin-muted)' }
                     }
                   >
