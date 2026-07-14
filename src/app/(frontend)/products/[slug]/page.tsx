@@ -4,7 +4,36 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { ShareButtons } from '@/components/shared/ShareButtons'
-import type { Product, ProductSpec, ProductImage } from '@/types/database'
+import type { Product, ProductImage } from '@/types/database'
+import { buildSpecRows, getSpecIconKey, type SpecIconKey } from '@/lib/product-specs'
+import {
+  FaMapMarkerAlt,
+  FaGlobeAsia,
+  FaShieldAlt,
+  FaBoxOpen,
+  FaShip,
+  FaCalendarAlt,
+  FaFileInvoice,
+  FaLayerGroup,
+  FaCircle,
+} from 'react-icons/fa'
+
+const SPEC_ICONS: Record<SpecIconKey, React.ComponentType<{ className?: string; size?: number }>> = {
+  location: FaMapMarkerAlt,
+  globe: FaGlobeAsia,
+  shield: FaShieldAlt,
+  box: FaBoxOpen,
+  ship: FaShip,
+  calendar: FaCalendarAlt,
+  file: FaFileInvoice,
+  layers: FaLayerGroup,
+  dot: FaCircle,
+}
+
+function SpecIcon({ label, className }: { label: string; className?: string }) {
+  const Icon = SPEC_ICONS[getSpecIconKey(label)]
+  return <Icon className={className} size={11} aria-hidden="true" />
+}
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://myraglobalexports.com'
 
@@ -54,7 +83,7 @@ export default async function ProductDetailPage({
   if (!product) notFound()
 
   const typedProduct = product as Product
-  const specs = typedProduct.specs as ProductSpec[]
+  const specRows = buildSpecRows(typedProduct)
   const images = typedProduct.images as ProductImage[]
   const relatedSlugs = typedProduct.related_slugs as string[]
 
@@ -188,47 +217,63 @@ export default async function ProductDetailPage({
           <div className="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-8">
             {typedProduct.origin && (
               <div>
-                <p className="text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">Origin</p>
+                <p className="flex items-center gap-1.5 text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">
+                  <SpecIcon label="Origin" className="text-white/30" /> Origin
+                </p>
                 <p className="font-sans text-white/70 text-sm">{typedProduct.origin}</p>
               </div>
             )}
             <div>
-              <p className="text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">Category</p>
+              <p className="flex items-center gap-1.5 text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">
+                <SpecIcon label="Category" className="text-white/30" /> Category
+              </p>
               <p className="font-sans text-white/70 text-sm">{typedProduct.category}</p>
             </div>
             {certifications.length > 0 && (
               <div>
-                <p className="text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">Certifications</p>
+                <p className="flex items-center gap-1.5 text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">
+                  <SpecIcon label="Certifications" className="text-white/30" /> Certifications
+                </p>
                 <p className="font-sans text-white/70 text-sm">{certifications.slice(0, 3).join(' · ')}</p>
               </div>
             )}
             {typedProduct.availability && (
               <div>
-                <p className="text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">Availability</p>
+                <p className="flex items-center gap-1.5 text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">
+                  <SpecIcon label="Availability" className="text-white/30" /> Availability
+                </p>
                 <p className="font-sans text-white/70 text-sm">{typedProduct.availability}</p>
               </div>
             )}
             {typedProduct.moq && (
               <div>
-                <p className="text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">MOQ</p>
+                <p className="flex items-center gap-1.5 text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">
+                  <SpecIcon label="MOQ" className="text-white/30" /> MOQ
+                </p>
                 <p className="font-sans text-white/70 text-sm">{typedProduct.moq} {typedProduct.moq_unit}</p>
               </div>
             )}
             {typedProduct.hs_code && (
               <div>
-                <p className="text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">HS Code</p>
+                <p className="flex items-center gap-1.5 text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">
+                  <SpecIcon label="HS Code" className="text-white/30" /> HS Code
+                </p>
                 <p className="font-sans text-white/70 text-sm">{typedProduct.hs_code}</p>
               </div>
             )}
             {typedProduct.loading_capacity && (
               <div>
-                <p className="text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">Loading Capacity</p>
+                <p className="flex items-center gap-1.5 text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">
+                  <SpecIcon label="Loading Capacity" className="text-white/30" /> Loading Capacity
+                </p>
                 <p className="font-sans text-white/70 text-sm">{typedProduct.loading_capacity}</p>
               </div>
             )}
             {typedProduct.supply_capacity && (
               <div>
-                <p className="text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">Supply Capacity/Month</p>
+                <p className="flex items-center gap-1.5 text-[9px] font-sans uppercase tracking-[0.3em] text-white/30 mb-1">
+                  <SpecIcon label="Supply Capacity/Month" className="text-white/30" /> Supply Capacity/Month
+                </p>
                 <p className="font-sans text-white/70 text-sm">{typedProduct.supply_capacity}</p>
               </div>
             )}
@@ -254,28 +299,30 @@ export default async function ProductDetailPage({
               </section>
             )}
 
-            {specs.length > 0 && (
+            {specRows.length > 0 && (
               <section>
                 <h2 className="font-heading text-brand-green text-2xl font-semibold mb-6">
                   Technical Specifications
                 </h2>
-                <div className="border border-fog overflow-hidden">
-                  {specs.map((spec, i) => (
-                    <div
-                      key={spec.label}
-                      className={`flex items-stretch ${i % 2 === 0 ? 'bg-white' : 'bg-cream/60'}`}
-                    >
-                      <div className="w-48 shrink-0 px-5 py-4 border-r border-fog">
-                        <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.12em] text-stone">
-                          {spec.label}
-                        </p>
-                      </div>
-                      <div className="flex-1 px-5 py-4">
-                        <p className="font-sans text-bark text-[14px]">{spec.value}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <table className="w-full border-collapse border border-fog">
+                  <tbody>
+                    {specRows.map((row, i) => (
+                      <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-cream/60'}>
+                        <td className="w-48 border-b border-r border-fog px-5 py-4 align-top">
+                          <div className="flex items-center gap-2 text-stone">
+                            <SpecIcon label={row.label} className="shrink-0" />
+                            <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.12em]">
+                              {row.label}
+                            </p>
+                          </div>
+                        </td>
+                        <td className="border-b border-fog px-5 py-4 align-top">
+                          <p className="font-sans text-bark text-[14px]">{row.value}</p>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </section>
             )}
 
