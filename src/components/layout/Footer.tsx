@@ -42,7 +42,7 @@ const QUICK_LINKS = [
 
 export function Footer({ contact, social, sections }: FooterProps) {
   return (
-    <footer className="bg-brand-green">
+    <footer className="bg-navy">
       {/* Top bar */}
       <div className="border-b border-white/10 px-6 py-6">
         <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -78,8 +78,8 @@ export function Footer({ contact, social, sections }: FooterProps) {
               Trusted quality, reliable supply, international standards.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-brand-gold block" />
-              <p className="text-[10px] font-sans uppercase tracking-[0.25em] text-brand-gold/70">
+              <span className="h-px w-8 bg-slate block" />
+              <p className="text-[10px] font-sans uppercase tracking-[0.25em] text-steel/70">
                 Est. India
               </p>
             </div>
@@ -87,7 +87,7 @@ export function Footer({ contact, social, sections }: FooterProps) {
 
           {/* Quick links */}
           <div>
-            <h3 className="mb-4 text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-brand-gold/70">
+            <h3 className="mb-4 text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-steel/70">
               Quick Links
             </h3>
             <ul className="space-y-2.5">
@@ -107,7 +107,7 @@ export function Footer({ contact, social, sections }: FooterProps) {
           {/* Contact */}
           {sections?.showContactInfo && contact && (
             <div>
-              <h3 className="mb-4 text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-brand-gold/70">
+              <h3 className="mb-4 text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-steel/70">
                 Contact
               </h3>
               <ul className="space-y-3">

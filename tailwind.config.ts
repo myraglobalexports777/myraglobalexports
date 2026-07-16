@@ -5,20 +5,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: '#FAF6EE',
-        fog: '#E8DFD0',
-        stone: '#8B7B5E',
-        bark: '#3D2B1A',
-        sage: '#4A6741',
-        'brand-green': {
+        navy: {
           DEFAULT: '#1C3D69',
           light: '#2A5490',
           dark: '#122A4A',
         },
-        'brand-gold': {
-          DEFAULT: '#C8882A',
-          light: '#E5A94E',
-          dark: '#9A6518',
+        steel: {
+          DEFAULT: '#707B7C',
+          light: '#8A9495',
+          dark: '#565F60',
+        },
+        slate: {
+          DEFAULT: '#2F4F4F',
+          light: '#3E6666',
+          dark: '#213838',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -60,8 +60,8 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        sans: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-playfair)', 'Georgia', 'serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease forwards',

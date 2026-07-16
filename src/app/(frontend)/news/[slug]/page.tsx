@@ -75,7 +75,7 @@ export default async function NewsArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <Link href="/news" className="text-sm text-brand-green hover:underline mb-6 inline-block">
+      <Link href="/news" className="text-sm text-navy hover:underline mb-6 inline-block">
         ← Back to News
       </Link>
 
@@ -89,7 +89,7 @@ export default async function NewsArticlePage({
         {new Date(post.published_at ?? post.created_at).toLocaleDateString('en-IN', { dateStyle: 'long' })}
       </p>
 
-      <h1 className="font-heading text-4xl font-bold text-brand-green mb-6 leading-tight">
+      <h1 className="font-heading text-4xl font-bold text-navy mb-6 leading-tight">
         {post.title}
       </h1>
 

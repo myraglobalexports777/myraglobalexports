@@ -23,12 +23,12 @@ export function HeroBanner() {
     PRODUCTS.map((p) => p.toUpperCase()).join(' · ') + ' · '
 
   return (
-    <section className="relative min-h-screen bg-brand-green flex flex-col overflow-hidden">
+    <section className="relative min-h-screen bg-navy flex flex-col overflow-hidden">
       {/* Geometric wheat-diamond pattern */}
       <div
         className="absolute inset-0 pointer-events-none select-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cdefs%3E%3Cpattern id='p' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath d='M40 4 L76 40 L40 76 L4 40 Z' fill='none' stroke='rgba(255,255,255,0.055)' stroke-width='0.8'/%3E%3Cpath d='M40 16 L64 40 L40 64 L16 40 Z' fill='none' stroke='rgba(200,136,42,0.12)' stroke-width='0.6'/%3E%3Ccircle cx='40' cy='40' r='2.5' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='0.8'/%3E%3Ccircle cx='0' cy='0' r='1.5' fill='rgba(200,136,42,0.1)'/%3E%3Ccircle cx='80' cy='0' r='1.5' fill='rgba(200,136,42,0.1)'/%3E%3Ccircle cx='0' cy='80' r='1.5' fill='rgba(200,136,42,0.1)'/%3E%3Ccircle cx='80' cy='80' r='1.5' fill='rgba(200,136,42,0.1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='80' height='80' fill='url(%23p)'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cdefs%3E%3Cpattern id='p' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath d='M40 4 L76 40 L40 76 L4 40 Z' fill='none' stroke='rgba(255,255,255,0.055)' stroke-width='0.8'/%3E%3Cpath d='M40 16 L64 40 L40 64 L16 40 Z' fill='none' stroke='rgba(112,123,124,0.12)' stroke-width='0.6'/%3E%3Ccircle cx='40' cy='40' r='2.5' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='0.8'/%3E%3Ccircle cx='0' cy='0' r='1.5' fill='rgba(112,123,124,0.1)'/%3E%3Ccircle cx='80' cy='0' r='1.5' fill='rgba(112,123,124,0.1)'/%3E%3Ccircle cx='0' cy='80' r='1.5' fill='rgba(112,123,124,0.1)'/%3E%3Ccircle cx='80' cy='80' r='1.5' fill='rgba(112,123,124,0.1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='80' height='80' fill='url(%23p)'/%3E%3C/svg%3E")`,
           backgroundSize: '80px 80px',
         }}
         aria-hidden="true"
@@ -59,20 +59,20 @@ export function HeroBanner() {
         <div className="text-center px-6 py-16 w-full max-w-4xl mx-auto">
 
           {/* Company identifier */}
-          <p className="font-sans text-brand-gold text-[11px] tracking-[0.45em] uppercase mb-8">
+          <p className="font-sans text-steel text-[11px] tracking-[0.45em] uppercase mb-8">
             Myra Global Exports
           </p>
 
           {/* Divider ornament */}
           <div className="flex items-center justify-center gap-3 mb-10" aria-hidden="true">
             <span className="block h-px w-20 bg-white/[0.12]" />
-            <span className="block w-1 h-1 rounded-full bg-brand-gold/50 shrink-0" />
+            <span className="block w-1 h-1 rounded-full bg-slate/50 shrink-0" />
             <span className="block h-px w-20 bg-white/[0.12]" />
           </div>
 
           {/* Headline */}
           <h1
-            className="font-heading text-white text-balance mb-8"
+            className="font-heading font-semibold text-white text-balance mb-8"
             style={{
               fontSize: 'clamp(2.6rem, 6vw, 5rem)',
               lineHeight: 1.08,
@@ -81,9 +81,9 @@ export function HeroBanner() {
           >
             Agricultural commodities
             <br />
-            <em className="text-brand-gold">
+            <span className="text-steel">
               from India&rsquo;s fields.
-            </em>
+            </span>
           </h1>
 
           {/* Description */}
@@ -103,13 +103,13 @@ export function HeroBanner() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/get-quote"
-              className="bg-brand-gold px-8 py-3.5 text-[12px] font-sans font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-200 hover:bg-brand-gold-light"
+              className="rounded-md bg-slate px-8 py-3.5 text-[12px] font-sans font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-200 hover:bg-slate-light"
             >
               Request a quote
             </Link>
             <Link
               href="/products"
-              className="border border-white/25 px-8 py-3.5 text-[12px] font-sans font-semibold uppercase tracking-[0.14em] text-white/70 transition-all duration-200 hover:border-white/60 hover:text-white"
+              className="rounded-md border border-white/25 px-8 py-3.5 text-[12px] font-sans font-semibold uppercase tracking-[0.14em] text-white/70 transition-all duration-200 hover:border-white/60 hover:text-white"
             >
               See our products
             </Link>

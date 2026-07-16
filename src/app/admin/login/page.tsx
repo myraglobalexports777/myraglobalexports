@@ -17,11 +17,11 @@ export default function AdminLoginPage() {
         <div className="text-center mb-8">
           <p
             className="text-xs font-semibold tracking-widest uppercase mb-1"
-            style={{ color: 'rgba(250,246,238,0.5)' }}
+            style={{ color: 'rgba(255,255,255,0.5)' }}
           >
             Myra Global Exports
           </p>
-          <h1 className="text-2xl font-semibold" style={{ color: 'var(--cream)' }}>
+          <h1 className="text-2xl font-semibold" style={{ color: '#FFFFFF' }}>
             Admin Console
           </h1>
         </div>
@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
               <Label
                 htmlFor="email"
                 className="text-xs font-medium"
-                style={{ color: 'rgba(250,246,238,0.7)' }}
+                style={{ color: 'rgba(255,255,255,0.7)' }}
               >
                 Email
               </Label>
@@ -48,14 +48,14 @@ export default function AdminLoginPage() {
                 type="email"
                 required
                 autoComplete="email"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/30 focus-visible:ring-amber-500/50 focus-visible:border-white/40"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/30 focus-visible:ring-steel/50 focus-visible:border-white/40"
               />
             </div>
             <div className="space-y-1.5">
               <Label
                 htmlFor="password"
                 className="text-xs font-medium"
-                style={{ color: 'rgba(250,246,238,0.7)' }}
+                style={{ color: 'rgba(255,255,255,0.7)' }}
               >
                 Password
               </Label>
@@ -65,15 +65,15 @@ export default function AdminLoginPage() {
                 type="password"
                 required
                 autoComplete="current-password"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/30 focus-visible:ring-amber-500/50 focus-visible:border-white/40"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/30 focus-visible:ring-steel/50 focus-visible:border-white/40"
               />
             </div>
             {state?.error && (
               <p
                 className="text-sm px-3 py-2 rounded-md"
                 style={{
-                  backgroundColor: 'rgba(200,136,42,0.15)',
-                  color: 'var(--admin-sidebar-active-text)',
+                  backgroundColor: 'rgba(220,38,38,0.12)',
+                  color: '#FCA5A5',
                 }}
               >
                 {state.error}

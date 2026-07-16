@@ -25,9 +25,9 @@ export default function ContactPage() {
   ].filter(Boolean) as { label: string; value: string; href: string | null }[]
 
   return (
-    <div className="bg-cream min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Page hero */}
-      <div className="bg-brand-green py-20 relative overflow-hidden">
+      <div className="bg-navy py-20 relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -37,17 +37,17 @@ export default function ContactPage() {
         />
         <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="flex items-center gap-4 mb-6">
-            <span className="block h-px w-10 bg-brand-gold shrink-0" />
-            <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-brand-gold/60">
+            <span className="block h-px w-10 bg-slate shrink-0" />
+            <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-steel/60">
               Get in Touch
             </p>
           </div>
           <h1
-            className="font-heading font-light text-white leading-tight mb-4"
+            className="font-heading font-semibold text-white leading-tight mb-4"
             style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)' }}
           >
             Contact<br />
-            <em className="italic text-brand-gold">Myra Global</em>
+            <span className=" text-steel">Myra Global</span>
           </h1>
           <p className="text-white/50 font-sans text-base">
             We&apos;d love to hear from you. Reach out any time.
@@ -61,19 +61,19 @@ export default function ContactPage() {
           {/* Contact info */}
           <div>
             <div className="flex items-center gap-4 mb-10">
-              <span className="block h-px w-10 bg-brand-gold shrink-0" />
-              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-stone">
+              <span className="block h-px w-10 bg-slate shrink-0" />
+              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-steel">
                 Contact Information
               </p>
             </div>
 
-            <div className="space-y-0 border border-fog overflow-hidden mb-10">
+            <div className="space-y-0 border border-steel/30 overflow-hidden mb-10">
               {contactItems.map(({ label, value, href }, i) => (
                 <div
                   key={label}
-                  className={`flex gap-8 items-start p-6 ${i > 0 ? 'border-t border-fog' : ''} hover:bg-white transition-colors`}
+                  className={`flex gap-8 items-start p-6 ${i > 0 ? 'border-t border-steel/30' : ''} hover:bg-white transition-colors`}
                 >
-                  <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-stone shrink-0 w-28">
+                  <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-steel shrink-0 w-28">
                     {label}
                   </span>
                   {href ? (
@@ -81,19 +81,19 @@ export default function ContactPage() {
                       href={href}
                       target={href.startsWith('http') ? '_blank' : undefined}
                       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-bark/70 font-sans text-sm hover:text-brand-green transition-colors whitespace-pre-line"
+                      className="text-slate-dark/70 font-sans text-sm hover:text-navy transition-colors whitespace-pre-line"
                     >
                       {value}
                     </a>
                   ) : (
-                    <p className="text-bark/70 font-sans text-sm whitespace-pre-line">{value}</p>
+                    <p className="text-slate-dark/70 font-sans text-sm whitespace-pre-line">{value}</p>
                   )}
                 </div>
               ))}
             </div>
 
             {/* Response time */}
-            <div className="bg-brand-green p-8 relative overflow-hidden">
+            <div className="bg-navy p-8 relative overflow-hidden">
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -103,7 +103,7 @@ export default function ContactPage() {
               />
               <div className="relative z-10 flex items-center gap-6">
                 <div>
-                  <p className="font-heading text-4xl font-light text-brand-gold">24h</p>
+                  <p className="font-heading text-4xl font-light text-steel">24h</p>
                   <p className="text-[9px] font-sans uppercase tracking-[0.25em] text-white/40 mt-0.5">Response</p>
                 </div>
                 <div className="w-px h-12 bg-white/10" />
@@ -114,7 +114,7 @@ export default function ContactPage() {
             </div>
 
             {c.googleMapsEmbedUrl && (
-              <div className="mt-8 overflow-hidden border border-fog">
+              <div className="mt-8 overflow-hidden border border-steel/30">
                 <iframe
                   src={c.googleMapsEmbedUrl}
                   width="100%"
@@ -131,12 +131,12 @@ export default function ContactPage() {
           {/* Contact form */}
           <div>
             <div className="flex items-center gap-4 mb-10">
-              <span className="block h-px w-10 bg-brand-gold shrink-0" />
-              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-stone">
+              <span className="block h-px w-10 bg-slate shrink-0" />
+              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-steel">
                 Send a Message
               </p>
             </div>
-            <div className="bg-white border border-fog p-8">
+            <div className="bg-white border border-steel/30 p-8">
               <ContactForm />
             </div>
           </div>

@@ -2,9 +2,9 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { updateLeadStatus } from './actions'
 
 const STATUS_STYLES = {
-  new: { bg: 'rgba(200,136,42,0.12)', text: '#8B5E1A', label: 'New' },
+  new: { bg: 'rgba(47,79,79,0.12)', text: '#2F4F4F', label: 'New' },
   contacted: { bg: 'rgba(28,61,105,0.1)', text: '#1C3D69', label: 'Contacted' },
-  closed: { bg: 'rgba(42,28,12,0.08)', text: '#5A3E25', label: 'Closed' },
+  closed: { bg: 'rgba(112,123,124,0.14)', text: '#565F60', label: 'Closed' },
 } as const
 
 export default async function AdminLeadsPage({
@@ -54,7 +54,7 @@ export default async function AdminLeadsPage({
               className="px-3 py-1.5 rounded-md text-sm font-medium transition-colors"
               style={
                 isActive
-                  ? { backgroundColor: 'var(--admin-text)', color: 'var(--cream)' }
+                  ? { backgroundColor: 'var(--admin-text)', color: '#FFFFFF' }
                   : {
                       backgroundColor: 'white',
                       color: 'var(--admin-muted)',
@@ -161,7 +161,7 @@ export default async function AdminLeadsPage({
                             isCurrentStatus
                               ? {
                                   backgroundColor: 'var(--admin-text)',
-                                  color: 'var(--cream)',
+                                  color: '#FFFFFF',
                                 }
                               : {
                                   backgroundColor: 'white',

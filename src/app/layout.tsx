@@ -1,18 +1,18 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans, Fraunces } from 'next/font/google'
+import { Montserrat, Playfair_Display } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
-const jakartaSans = Plus_Jakarta_Sans({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-dm-sans',
+  variable: '--font-montserrat',
   display: 'swap',
 })
-const fraunces = Fraunces({
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-cormorant',
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+  variable: '--font-playfair',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal'],
   display: 'swap',
 })
 
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jakartaSans.variable} ${fraunces.variable}`}>
-      <body className="font-sans bg-cream">
+    <html lang="en" className={`${montserrat.variable} ${playfairDisplay.variable}`}>
+      <body className="font-sans bg-white">
         {children}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
           process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'undefined' && (

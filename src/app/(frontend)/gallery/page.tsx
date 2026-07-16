@@ -31,7 +31,7 @@ export default async function GalleryPage({
   return (
     <div className="mx-auto max-w-7xl px-4 py-16">
       <div className="mb-12 text-center">
-        <h1 className="mb-3 font-heading text-4xl font-bold text-brand-green">Gallery</h1>
+        <h1 className="mb-3 font-heading text-4xl font-bold text-navy">Gallery</h1>
         <p className="text-gray-500">A glimpse into our operations, partnerships, and achievements</p>
       </div>
 
@@ -42,7 +42,7 @@ export default async function GalleryPage({
             href={cat === 'All' ? '/gallery' : `/gallery?category=${cat}`}
             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
               (cat === 'All' && !category) || category === cat
-                ? 'bg-brand-green text-white'
+                ? 'bg-navy text-white'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >

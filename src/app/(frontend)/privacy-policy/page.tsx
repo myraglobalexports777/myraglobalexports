@@ -5,7 +5,7 @@ export const metadata: Metadata = { title: 'Privacy Policy' }
 export default function PrivacyPolicyPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
-      <h1 className="mb-8 font-heading text-4xl font-bold text-brand-green">Privacy Policy</h1>
+      <h1 className="mb-8 font-heading text-4xl font-bold text-navy">Privacy Policy</h1>
       <div className="prose prose-lg max-w-none">
         <p>
           <strong>Effective Date:</strong> June 2025

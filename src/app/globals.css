@@ -3,44 +3,41 @@
 @tailwind utilities;
 
 :root {
-  --cream: #FAF6EE;
-  --fog: #E8DFD0;
-  --stone: #8B7B5E;
-  --bark: #3D2B1A;
-  --forest: #1C3D69;
-  --amber: #C8882A;
+  --navy: #1C3D69;
+  --steel: #707B7C;
+  --slate: #2F4F4F;
 
   /* Admin panel */
-  --admin-bg: #EFE9DF;
+  --admin-bg: #FFFFFF;
   --admin-sidebar: #1C3D69;
   --admin-sidebar-hover: #24487D;
-  --admin-sidebar-active-bg: rgba(200, 136, 42, 0.16);
-  --admin-sidebar-active-text: #E8A030;
-  --admin-sidebar-text: rgba(250, 246, 238, 0.7);
-  --admin-border: #DDD5C5;
-  --admin-text: #2A1C0C;
-  --admin-muted: #6B5A45;
-  --admin-accent: #C8882A;
+  --admin-sidebar-active-bg: rgba(112, 123, 124, 0.24);
+  --admin-sidebar-active-text: #FFFFFF;
+  --admin-sidebar-text: rgba(255, 255, 255, 0.7);
+  --admin-border: #D5D8D8;
+  --admin-text: #1F2A2A;
+  --admin-muted: #707B7C;
+  --admin-accent: #2F4F4F;
 
   /* shadcn/ui theme variables, mapped to the brand palette above */
-  --background: 40 30% 97%;
-  --foreground: 29 40% 17%;
-  --card: 40 30% 97%;
-  --card-foreground: 29 40% 17%;
-  --popover: 40 30% 97%;
-  --popover-foreground: 29 40% 17%;
+  --background: 0 0% 100%;
+  --foreground: 195 12% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 195 12% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 195 12% 15%;
   --primary: 214 58% 26%;
-  --primary-foreground: 40 30% 97%;
-  --secondary: 38 30% 90%;
-  --secondary-foreground: 29 40% 17%;
-  --muted: 38 30% 90%;
-  --muted-foreground: 39 19% 40%;
-  --accent: 36 65% 47%;
-  --accent-foreground: 40 30% 97%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 180 3% 47%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 180 8% 92%;
+  --muted-foreground: 180 3% 35%;
+  --accent: 180 26% 24%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 72% 51%;
-  --destructive-foreground: 40 30% 97%;
-  --border: 40 20% 82%;
-  --input: 40 20% 82%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 180 6% 85%;
+  --input: 180 6% 85%;
   --ring: 214 58% 26%;
   --radius: 0.5rem;
 }
@@ -50,13 +47,17 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #FAF6EE;
-    color: #3D2B1A;
+    background-color: #FFFFFF;
+    color: #1F2A2A;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-cormorant), Georgia, serif;
+    font-family: var(--font-playfair), Georgia, serif;
+    font-style: normal;
+  }
+  i, em, .italic {
+    font-style: normal;
   }
 }
 

@@ -165,7 +165,7 @@ export function ProductForm({ product }: Props) {
   const [fullDesc, setFullDesc] = useState(product?.full_description ?? '')
   const [origin, setOrigin] = useState(product?.origin ?? '')
   const [emoji, setEmoji] = useState(product?.emoji ?? '')
-  const [accentColor, setAccentColor] = useState(product?.accent_color ?? '#C8882A')
+  const [accentColor, setAccentColor] = useState(product?.accent_color ?? '#707B7C')
   const [images, setImages] = useState<ProductImage[]>(product?.images ?? [])
   const [specs, setSpecs] = useState<ProductSpec[]>(product?.specs ?? [])
   const [varieties, setVarieties] = useState<string[]>(product?.varieties ?? [])
@@ -390,7 +390,7 @@ export function ProductForm({ product }: Props) {
               checked={isPublished}
               onCheckedChange={setIsPublished}
               id="published"
-              className="data-[state=checked]:bg-[#C8882A] data-[state=unchecked]:bg-[#C0B2A0] [&>span]:bg-white [&>span]:shadow-sm"
+              className="data-[state=checked]:bg-[#2F4F4F] data-[state=unchecked]:bg-[#C4CACA] [&>span]:bg-white [&>span]:shadow-sm"
             />
             <Label htmlFor="published" className="cursor-pointer" style={{ color: 'var(--admin-text)' }}>Published</Label>
           </div>
@@ -399,7 +399,7 @@ export function ProductForm({ product }: Props) {
               checked={isFuture}
               onCheckedChange={setIsFuture}
               id="future"
-              className="data-[state=checked]:bg-[#C8882A] data-[state=unchecked]:bg-[#C0B2A0] [&>span]:bg-white [&>span]:shadow-sm"
+              className="data-[state=checked]:bg-[#2F4F4F] data-[state=unchecked]:bg-[#C4CACA] [&>span]:bg-white [&>span]:shadow-sm"
             />
             <Label htmlFor="future" className="cursor-pointer" style={{ color: 'var(--admin-text)' }}>Future Product (name only)</Label>
           </div>

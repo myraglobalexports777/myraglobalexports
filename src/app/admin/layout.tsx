@@ -16,7 +16,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           >
             Myra
           </p>
-          <p className="text-sm font-medium mt-0.5" style={{ color: 'rgba(250,246,238,0.5)' }}>
+          <p className="text-sm font-medium mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
             Admin Console
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <button
               type="submit"
               className="flex items-center gap-3 w-full px-3 py-2.5 rounded-md text-sm font-medium transition-colors hover:bg-white/10"
-              style={{ color: 'rgba(250,246,238,0.5)' }}
+              style={{ color: 'rgba(255,255,255,0.5)' }}
             >
               <LogOut size={15} strokeWidth={1.8} />
               Sign out

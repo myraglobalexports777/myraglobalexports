@@ -9,6 +9,7 @@ import { ExportInfo } from '@/components/home/ExportInfo'
 import { PaymentTerms } from '@/components/home/PaymentTerms'
 import { InquirySection } from '@/components/home/InquirySection'
 import { ContactInfoSection } from '@/components/home/ContactInfoSection'
+import { HowItWorksSection } from '@/components/home/HowItWorksSection'
 import { siteSettings } from '@/data/site-settings'
 import { createClient } from '@/lib/supabase/server'
 import type { ProductImage } from '@/types/database'
@@ -103,6 +104,7 @@ export default async function HomePage() {
       {showContactInfo && (
         <ContactInfoSection contact={siteSettings.contact} />
       )}
+      <HowItWorksSection />
     </>
   )
 }

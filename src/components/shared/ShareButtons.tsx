@@ -49,7 +49,7 @@ export function ShareButtons({ url, title, className = '', iconSize = 16 }: Prop
         type="button"
         onClick={handleCopy}
         aria-label="Copy link"
-        className="flex items-center gap-1.5 transition-transform hover:scale-110 text-stone"
+        className="flex items-center gap-1.5 transition-transform hover:scale-110 text-steel"
       >
         <FaLink size={iconSize} />
         {copied && <span className="text-[11px] font-sans">Copied!</span>}

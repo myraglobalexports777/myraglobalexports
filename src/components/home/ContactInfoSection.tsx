@@ -41,19 +41,19 @@ export function ContactInfoSection({ contact }: Props) {
   if (items.length === 0) return null
 
   return (
-    <section className="py-16 bg-cream border-t border-fog">
+    <section className="py-16 bg-white border-t border-steel/30">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-center gap-4 mb-10 justify-center">
-          <span className="block h-px w-10 bg-brand-gold shrink-0" />
-          <h2 className="text-[11px] font-sans uppercase tracking-[0.3em] text-stone">
+          <span className="block h-px w-10 bg-slate shrink-0" />
+          <h2 className="text-[11px] font-sans uppercase tracking-[0.3em] text-steel">
             Get in Touch
           </h2>
-          <span className="block h-px w-10 bg-brand-gold shrink-0" />
+          <span className="block h-px w-10 bg-slate shrink-0" />
         </div>
-        <div className="grid grid-cols-1 gap-px bg-fog sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px bg-steel/10 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(({ label, value, href }) => (
-            <div key={label} className="bg-white p-8 text-center hover:bg-cream transition-colors">
-              <p className="text-[10px] font-sans font-semibold uppercase tracking-[0.22em] text-stone mb-3">
+            <div key={label} className="bg-white p-8 text-center hover:bg-white transition-colors">
+              <p className="text-[10px] font-sans font-semibold uppercase tracking-[0.22em] text-steel mb-3">
                 {label}
               </p>
               {href ? (
@@ -61,12 +61,12 @@ export function ContactInfoSection({ contact }: Props) {
                   href={href}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="font-heading text-lg font-light text-brand-green hover:text-brand-gold transition-colors"
+                  className="font-heading text-lg font-light text-navy hover:text-steel transition-colors"
                 >
                   {value}
                 </a>
               ) : (
-                <p className="font-heading text-lg font-light text-bark">{value}</p>
+                <p className="font-heading text-lg font-light text-slate-dark">{value}</p>
               )}
             </div>
           ))}

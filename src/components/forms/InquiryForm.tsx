@@ -59,13 +59,13 @@ export function InquiryForm() {
     return (
       <div className="rounded-2xl bg-green-50 p-8 text-center">
         <div className="mb-3 text-5xl" aria-hidden="true">✅</div>
-        <h3 className="text-xl font-bold text-brand-green">Inquiry Received!</h3>
+        <h3 className="text-xl font-bold text-navy">Inquiry Received!</h3>
         <p className="mt-2 text-gray-600">
           We&apos;ll get back to you within 24 hours.
         </p>
         <button
           onClick={() => setSubmitted(false)}
-          className="mt-4 text-sm text-brand-green underline"
+          className="mt-4 text-sm text-navy underline"
         >
           Submit another inquiry
         </button>
@@ -74,7 +74,7 @@ export function InquiryForm() {
   }
 
   const inputClass =
-    'w-full rounded-lg border px-4 py-2.5 text-sm focus:border-brand-green focus:outline-none focus:ring-1 focus:ring-brand-green'
+    'w-full rounded-lg border px-4 py-2.5 text-sm focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy'
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -189,7 +189,7 @@ export function InquiryForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-full bg-brand-green py-3 font-semibold text-white transition-colors hover:bg-brand-green-light disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-md bg-slate py-3 font-semibold text-white transition-colors hover:bg-slate-dark disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
       </button>

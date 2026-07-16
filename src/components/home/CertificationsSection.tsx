@@ -25,35 +25,35 @@ export function CertificationsSection({ certificates }: Props) {
   const displayCerts = certificates.length > 0 ? certificates : MOCK_CERTS
 
   return (
-    <section className="py-24 bg-white border-y border-fog">
+    <section className="py-24 bg-white border-y border-steel/30">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
           {/* Label */}
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <span className="block h-px w-10 bg-brand-gold shrink-0" />
-              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-stone">
+              <span className="block h-px w-10 bg-slate shrink-0" />
+              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-steel">
                 Compliance
               </p>
             </div>
             <h2
-              className="font-heading font-light text-brand-green leading-tight mb-4"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+              className="font-heading font-semibold text-navy leading-tight mb-4"
+              style={{ fontSize: 'clamp(26px, 3vw, 28px)' }}
             >
               Certified &amp;<br />
-              <em className="italic">Compliant</em>
+              <span className="">Compliant</span>
             </h2>
-            <p className="text-bark/55 font-sans text-sm leading-relaxed">
+            <p className="text-slate-dark/55 font-sans text-sm leading-relaxed">
               All operations meet international quality and food safety standards.
             </p>
           </div>
 
           {/* Cert cards */}
-          <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-px bg-fog">
+          <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-px bg-steel/10">
             {displayCerts.map((cert) => (
               <div
                 key={cert.id}
-                className="bg-white p-7 flex flex-col items-center text-center hover:bg-cream transition-colors"
+                className="bg-white p-7 flex flex-col items-center text-center hover:bg-white transition-colors"
               >
                 {cert.image?.url ? (
                   <Image
@@ -65,17 +65,17 @@ export function CertificationsSection({ certificates }: Props) {
                   />
                 ) : (
                   <div
-                    className="mb-4 flex h-14 w-14 items-center justify-center bg-brand-green/8 border border-fog"
+                    className="mb-4 flex h-14 w-14 items-center justify-center bg-navy/8 border border-steel/30"
                     aria-hidden="true"
                   >
-                    <span className="font-heading text-lg font-bold text-brand-green">
+                    <span className="font-heading text-lg font-bold text-navy">
                       {cert.title.slice(0, 2)}
                     </span>
                   </div>
                 )}
-                <p className="font-heading text-base font-semibold text-brand-green">{cert.title}</p>
+                <p className="font-heading text-base font-semibold text-navy">{cert.title}</p>
                 {cert.certificateNumber && (
-                  <p className="mt-1 text-[11px] font-sans text-stone leading-tight">
+                  <p className="mt-1 text-[11px] font-sans text-steel leading-tight">
                     {cert.certificateNumber}
                   </p>
                 )}

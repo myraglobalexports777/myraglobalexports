@@ -22,22 +22,22 @@ const MARQUEE_ITEMS = [...COUNTRIES, ...COUNTRIES]
 
 export function ExportMarkets() {
   return (
-    <section className="py-24 bg-brand-green overflow-hidden">
+    <section className="py-24 bg-navy overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 mb-14">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
             <div className="flex items-center gap-4 mb-5">
-              <span className="block h-px w-10 bg-brand-gold shrink-0" />
-              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-brand-gold/60">
+              <span className="block h-px w-10 bg-slate shrink-0" />
+              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-steel/60">
                 Global Presence
               </p>
             </div>
             <h2
-              className="font-heading font-light text-white leading-tight"
-              style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)' }}
+              className="font-heading font-semibold text-white leading-tight"
+              style={{ fontSize: 'clamp(26px, 3vw, 28px)' }}
             >
               Our Export<br />
-              <em className="italic text-brand-gold">Markets</em>
+              <span className=" text-steel">Markets</span>
             </h2>
           </div>
           <p className="text-white/45 text-sm font-sans max-w-xs leading-relaxed">
@@ -49,8 +49,8 @@ export function ExportMarkets() {
       {/* Marquee row */}
       <div className="relative">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brand-green to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brand-green to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-navy to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-navy to-transparent z-10 pointer-events-none" />
 
         <div className="flex overflow-hidden">
           <div
@@ -85,7 +85,7 @@ export function ExportMarkets() {
             { value: '∞', label: 'Growth Potential' },
           ].map(({ value, label }) => (
             <div key={label}>
-              <p className="font-heading text-3xl font-light text-brand-gold">{value}</p>
+              <p className="font-heading text-3xl font-light text-steel">{value}</p>
               <p className="text-[10px] font-sans uppercase tracking-[0.2em] text-white/35 mt-1.5">{label}</p>
             </div>
           ))}

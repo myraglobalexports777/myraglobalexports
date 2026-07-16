@@ -19,7 +19,7 @@ export default async function NewsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-16">
       <div className="mb-12 text-center">
-        <h1 className="mb-3 font-heading text-4xl font-bold text-brand-green">
+        <h1 className="mb-3 font-heading text-4xl font-bold text-navy">
           News &amp; Updates
         </h1>
         <p className="text-gray-500">Stay up to date with Myra Global Exports</p>
@@ -43,8 +43,8 @@ export default async function NewsPage() {
                   />
                 </div>
               ) : (
-                <div className="h-48 bg-brand-green/5 flex items-center justify-center">
-                  <span className="text-brand-green/20 font-heading text-4xl font-bold">M</span>
+                <div className="h-48 bg-navy/5 flex items-center justify-center">
+                  <span className="text-navy/20 font-heading text-4xl font-bold">M</span>
                 </div>
               )}
               <div className="p-5">
@@ -53,7 +53,7 @@ export default async function NewsPage() {
                     dateStyle: 'long',
                   })}
                 </p>
-                <h2 className="font-heading text-lg font-semibold text-gray-900 group-hover:text-brand-green transition-colors leading-snug">
+                <h2 className="font-heading text-lg font-semibold text-gray-900 group-hover:text-navy transition-colors leading-snug">
                   {post.title}
                 </h2>
               </div>

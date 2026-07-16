@@ -98,7 +98,7 @@ export default async function ProductDetailPage({
     : { data: [] }
 
   const firstImage = images?.[0] ?? null
-  const accentColor = typedProduct.accent_color ?? '#C8882A'
+  const accentColor = typedProduct.accent_color ?? '#707B7C'
   const varieties = typedProduct.varieties as string[]
   const grades = typedProduct.grades as string[]
   const packaging = typedProduct.packaging as string[]
@@ -131,7 +131,7 @@ export default async function ProductDetailPage({
   }
 
   return (
-    <div className="bg-cream min-h-screen">
+    <div className="bg-white min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <SetCurrentProduct name={typedProduct.name} />
@@ -157,25 +157,25 @@ export default async function ProductDetailPage({
               Products
             </Link>
             <span className="text-white/20 text-xs">›</span>
-            <span className="text-[11px] font-sans uppercase tracking-[0.25em] text-brand-gold/70">
+            <span className="text-[11px] font-sans uppercase tracking-[0.25em] text-steel/70">
               {typedProduct.category}
             </span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
             <div>
-              <p className="text-[10px] font-sans uppercase tracking-[0.4em] text-brand-gold/60 mb-4">
+              <p className="text-[10px] font-sans uppercase tracking-[0.4em] text-steel/60 mb-4">
                 {typedProduct.category}
               </p>
               <h1
-                className="font-heading text-white font-light leading-none mb-5"
+                className="font-heading text-white font-semibold leading-none mb-5"
                 style={{ fontSize: 'clamp(3rem, 7vw, 6rem)' }}
               >
                 {typedProduct.name}
               </h1>
               {typedProduct.tagline && (
                 <p
-                  className="font-heading italic mb-6"
+                  className="font-heading font-semibold mb-6"
                   style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', color: accentColor }}
                 >
                   {typedProduct.tagline}
@@ -282,11 +282,11 @@ export default async function ProductDetailPage({
             {typedProduct.full_description && (
               <section>
                 <div className="flex items-center gap-4 mb-5">
-                  <span className="block h-px flex-1 bg-fog" />
-                  <span className="text-[9px] font-sans uppercase tracking-[0.3em] text-stone">Overview</span>
-                  <span className="block h-px flex-1 bg-fog" />
+                  <span className="block h-px flex-1 bg-steel/10" />
+                  <span className="text-[9px] font-sans uppercase tracking-[0.3em] text-steel">Overview</span>
+                  <span className="block h-px flex-1 bg-steel/10" />
                 </div>
-                <p className="font-sans text-bark/70 text-[15px] leading-[1.9]">
+                <p className="font-sans text-slate-dark/70 text-[15px] leading-[1.9]">
                   {typedProduct.full_description}
                 </p>
               </section>
@@ -294,23 +294,23 @@ export default async function ProductDetailPage({
 
             {specRows.length > 0 && (
               <section>
-                <h2 className="font-heading text-brand-green text-2xl font-semibold mb-6">
+                <h2 className="font-heading text-navy text-2xl font-semibold mb-6">
                   Technical Specifications
                 </h2>
-                <table className="w-full border-collapse border border-fog">
+                <table className="w-full border-collapse border border-steel/30">
                   <tbody>
                     {specRows.map((row, i) => (
-                      <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-cream/60'}>
-                        <td className="w-48 border-b border-r border-fog px-5 py-4 align-top">
-                          <div className="flex items-center gap-2 text-stone">
+                      <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-white/60'}>
+                        <td className="w-48 border-b border-r border-steel/30 px-5 py-4 align-top">
+                          <div className="flex items-center gap-2 text-steel">
                             <SpecIcon label={row.label} className="shrink-0" />
                             <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.12em]">
                               {row.label}
                             </p>
                           </div>
                         </td>
-                        <td className="border-b border-fog px-5 py-4 align-top">
-                          <p className="font-sans text-bark text-[14px]">{row.value}</p>
+                        <td className="border-b border-steel/30 px-5 py-4 align-top">
+                          <p className="font-sans text-slate-dark text-[14px]">{row.value}</p>
                         </td>
                       </tr>
                     ))}
@@ -321,12 +321,12 @@ export default async function ProductDetailPage({
 
             {varieties.length > 0 && (
               <section>
-                <h2 className="font-heading text-brand-green text-2xl font-semibold mb-5">
+                <h2 className="font-heading text-navy text-2xl font-semibold mb-5">
                   Varieties
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {varieties.map((v) => (
-                    <span key={v} className="inline-block border border-fog bg-white px-4 py-2 text-[12px] font-sans font-medium text-bark/70 tracking-wide">
+                    <span key={v} className="inline-block border border-steel/30 bg-white px-4 py-2 text-[12px] font-sans font-medium text-slate-dark/70 tracking-wide">
                       {v}
                     </span>
                   ))}
@@ -336,12 +336,12 @@ export default async function ProductDetailPage({
 
             {grades.length > 0 && (
               <section>
-                <h2 className="font-heading text-brand-green text-2xl font-semibold mb-5">
+                <h2 className="font-heading text-navy text-2xl font-semibold mb-5">
                   Available Grades
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {grades.map((grade) => (
-                    <span key={grade} className="inline-block border border-fog bg-white px-4 py-2 text-[12px] font-sans font-medium text-bark/70 tracking-wide">
+                    <span key={grade} className="inline-block border border-steel/30 bg-white px-4 py-2 text-[12px] font-sans font-medium text-slate-dark/70 tracking-wide">
                       {grade}
                     </span>
                   ))}
@@ -351,14 +351,14 @@ export default async function ProductDetailPage({
 
             {useCases.length > 0 && (
               <section>
-                <h2 className="font-heading text-brand-green text-2xl font-semibold mb-5">
+                <h2 className="font-heading text-navy text-2xl font-semibold mb-5">
                   Applications
                 </h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {useCases.map((use) => (
-                    <div key={use} className="bg-white border border-fog px-4 py-3 flex items-start gap-2">
+                    <div key={use} className="bg-white border border-steel/30 px-4 py-3 flex items-start gap-2">
                       <span className="block w-1 h-1 rounded-full mt-2 shrink-0" style={{ backgroundColor: accentColor }} />
-                      <span className="font-sans text-[13px] text-bark/70 leading-snug">{use}</span>
+                      <span className="font-sans text-[13px] text-slate-dark/70 leading-snug">{use}</span>
                     </div>
                   ))}
                 </div>
@@ -367,17 +367,17 @@ export default async function ProductDetailPage({
 
             {packaging.length > 0 && (
               <section>
-                <h2 className="font-heading text-brand-green text-2xl font-semibold mb-5">
+                <h2 className="font-heading text-navy text-2xl font-semibold mb-5">
                   Packaging Options
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {packaging.map((pack, i) => (
-                    <div key={i} className="flex items-center gap-3 border border-fog bg-white px-4 py-3">
+                    <div key={i} className="flex items-center gap-3 border border-steel/30 bg-white px-4 py-3">
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
                         <rect x="1" y="1" width="12" height="12" rx="1" stroke={accentColor} strokeWidth="1.5" />
                         <path d="M1 5h12M5 1v4" stroke={accentColor} strokeWidth="1" />
                       </svg>
-                      <span className="font-sans text-[13px] text-bark/70">{pack}</span>
+                      <span className="font-sans text-[13px] text-slate-dark/70">{pack}</span>
                     </div>
                   ))}
                 </div>
@@ -388,11 +388,11 @@ export default async function ProductDetailPage({
           {/* Sticky sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-4">
-              <div className="bg-brand-green p-8">
-                <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-brand-gold/70 mb-3">
+              <div className="bg-navy p-8">
+                <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-steel/70 mb-3">
                   Export Inquiry
                 </p>
-                <h3 className="font-heading text-white text-2xl font-light leading-tight mb-4">
+                <h3 className="font-heading text-white text-2xl font-semibold leading-tight mb-4">
                   Request a quote for {typedProduct.name}
                 </h3>
                 <p className="font-sans text-white/50 text-[13px] leading-relaxed mb-6">
@@ -414,13 +414,13 @@ export default async function ProductDetailPage({
               </div>
 
               {certifications.length > 0 && (
-                <div className="bg-white border border-fog p-6">
-                  <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-stone mb-4">
+                <div className="bg-white border border-steel/30 p-6">
+                  <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-steel mb-4">
                     Certifications
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {certifications.map((cert) => (
-                      <span key={cert} className="inline-block border border-fog px-3 py-1 text-[11px] font-sans font-semibold uppercase tracking-[0.08em] text-bark/60">
+                      <span key={cert} className="inline-block border border-steel/30 px-3 py-1 text-[11px] font-sans font-semibold uppercase tracking-[0.08em] text-slate-dark/60">
                         {cert}
                       </span>
                     ))}
@@ -428,21 +428,21 @@ export default async function ProductDetailPage({
                 </div>
               )}
 
-              <div className="bg-white border border-fog p-6 space-y-4">
-                <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-stone">Why Us</p>
+              <div className="bg-white border border-steel/30 p-6 space-y-4">
+                <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-steel">Why Us</p>
                 {['30+ export destinations', 'Lab tested every batch', 'Phytosanitary certified', 'Custom packaging available'].map((point) => (
                   <div key={point} className="flex items-start gap-2.5">
                     <svg width="12" height="12" viewBox="0 0 12 12" className="shrink-0 mt-0.5">
                       <circle cx="6" cy="6" r="5" fill="none" stroke="#1C3D69" strokeWidth="1" />
                       <path d="M3.5 6l2 2 3-3" stroke="#1C3D69" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <span className="font-sans text-[13px] text-bark/65 leading-snug">{point}</span>
+                    <span className="font-sans text-[13px] text-slate-dark/65 leading-snug">{point}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-white border border-fog p-6">
-                <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-stone mb-4">Share</p>
+              <div className="bg-white border border-steel/30 p-6">
+                <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-steel mb-4">Share</p>
                 <ShareButtons url={`${SITE_URL}/products/${typedProduct.slug}`} title={typedProduct.name} />
               </div>
             </div>
@@ -452,20 +452,20 @@ export default async function ProductDetailPage({
 
       {/* Related products */}
       {relatedProducts && relatedProducts.length > 0 && (
-        <div className="border-t border-fog bg-white py-16">
+        <div className="border-t border-steel/30 bg-white py-16">
           <div className="mx-auto max-w-7xl px-6">
             <div className="flex items-center gap-4 mb-10">
-              <span className="block h-px w-8 bg-brand-gold shrink-0" />
-              <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-stone">Also exported by Myra</p>
+              <span className="block h-px w-8 bg-slate shrink-0" />
+              <p className="text-[10px] font-sans uppercase tracking-[0.3em] text-steel">Also exported by Myra</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-fog">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-steel/10">
               {relatedProducts.map((rel) => {
                 const relImages = rel.images as ProductImage[]
                 return (
                   <Link
                     key={rel.slug}
                     href={`/products/${rel.slug}`}
-                    className="group bg-white hover:bg-cream transition-colors p-8 flex gap-5 items-start"
+                    className="group bg-white hover:bg-white transition-colors p-8 flex gap-5 items-start"
                   >
                     {relImages?.[0]?.url ? (
                       <div className="relative w-12 h-12 shrink-0 rounded overflow-hidden mt-1">
@@ -477,10 +477,10 @@ export default async function ProductDetailPage({
                       </span>
                     )}
                     <div>
-                      <p className="text-[9px] font-sans uppercase tracking-[0.25em] text-stone mb-1">{rel.category}</p>
-                      <h3 className="font-heading text-bark text-xl font-semibold mb-1 leading-tight">{rel.name}</h3>
-                      <p className="font-sans text-bark/50 text-[12px] leading-relaxed line-clamp-2">{rel.short_description}</p>
-                      <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-sans font-semibold uppercase tracking-[0.14em] text-brand-green group-hover:text-brand-gold transition-colors">
+                      <p className="text-[9px] font-sans uppercase tracking-[0.25em] text-steel mb-1">{rel.category}</p>
+                      <h3 className="font-heading text-slate-dark text-xl font-semibold mb-1 leading-tight">{rel.name}</h3>
+                      <p className="font-sans text-slate-dark/50 text-[12px] leading-relaxed line-clamp-2">{rel.short_description}</p>
+                      <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-sans font-semibold uppercase tracking-[0.14em] text-navy group-hover:text-steel transition-colors">
                         View <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
                       </span>
                     </div>
@@ -493,15 +493,15 @@ export default async function ProductDetailPage({
       )}
 
       {/* Bottom CTA */}
-      <div className="border-t border-fog bg-cream py-16 text-center">
-        <p className="text-[10px] font-sans uppercase tracking-[0.35em] text-stone mb-4">Ready to source?</p>
-        <h2 className="font-heading text-brand-green font-light mb-6" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
+      <div className="border-t border-steel/30 bg-white py-16 text-center">
+        <p className="text-[10px] font-sans uppercase tracking-[0.35em] text-steel mb-4">Ready to source?</p>
+        <h2 className="font-heading text-navy font-semibold mb-6" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
           Get a competitive export quote<br />
-          <em className="italic text-brand-gold">within 24 hours.</em>
+          <span className=" text-steel">within 24 hours.</span>
         </h2>
         <Link
           href="/get-quote"
-          className="inline-block bg-brand-green px-10 py-4 text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-white hover:bg-brand-green-light transition-colors"
+          className="inline-block rounded-md bg-slate px-10 py-4 text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-white hover:bg-slate-dark transition-colors"
         >
           Request a Quote
         </Link>

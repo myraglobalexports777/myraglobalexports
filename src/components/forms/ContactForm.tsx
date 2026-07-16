@@ -51,7 +51,7 @@ export function ContactForm() {
     return (
       <div className="rounded-2xl bg-green-50 p-6 text-center">
         <p className="text-3xl" aria-hidden="true">✅</p>
-        <p className="mt-2 font-semibold text-brand-green">
+        <p className="mt-2 font-semibold text-navy">
           Message sent! We&apos;ll be in touch soon.
         </p>
       </div>
@@ -59,7 +59,7 @@ export function ContactForm() {
   }
 
   const inputClass =
-    'w-full rounded-lg border px-4 py-2.5 text-sm focus:border-brand-green focus:outline-none focus:ring-1 focus:ring-brand-green'
+    'w-full rounded-lg border px-4 py-2.5 text-sm focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy'
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -105,7 +105,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-full bg-brand-green py-3 font-semibold text-white disabled:opacity-60"
+        className="w-full rounded-md bg-slate py-3 font-semibold text-white transition-colors hover:bg-slate-dark disabled:opacity-60"
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>

@@ -82,8 +82,8 @@ export default async function AdminProductsPage() {
                     <span
                       className="text-xs font-medium px-2 py-0.5 rounded-full"
                       style={{
-                        backgroundColor: 'rgba(200,136,42,0.12)',
-                        color: '#8B5E1A',
+                        backgroundColor: 'rgba(47,79,79,0.12)',
+                        color: '#2F4F4F',
                       }}
                     >
                       Future

@@ -37,44 +37,44 @@ export function ProductsSection({ products }: Props) {
   const displayProducts = products.length > 0 ? products : MOCK_PRODUCTS
 
   return (
-    <section className="py-24 bg-cream">
+    <section className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
           <div>
             <div className="flex items-center gap-4 mb-5">
-              <span className="block h-px w-10 bg-brand-gold shrink-0" />
-              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-stone">
+              <span className="block h-px w-10 bg-slate shrink-0" />
+              <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-steel">
                 Product Range
               </p>
             </div>
             <h2
-              className="font-heading font-light text-brand-green leading-tight"
-              style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)' }}
+              className="font-heading font-semibold text-navy leading-tight"
+              style={{ fontSize: 'clamp(26px, 3vw, 28px)' }}
             >
               Our Products
             </h2>
           </div>
           <Link
             href="/products"
-            className="shrink-0 border border-brand-green px-6 py-2.5 text-[11.5px] font-sans font-semibold uppercase tracking-[0.14em] text-brand-green transition-all hover:bg-brand-green hover:text-white"
+            className="shrink-0 rounded-md bg-slate px-6 py-3 text-[13px] font-sans font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-slate-dark"
           >
             View All Products
           </Link>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 gap-px bg-fog sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px bg-steel/10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {displayProducts.map((product) => {
             const imgObj = product.images?.[0]?.image
             return (
               <Link
                 key={product.id}
                 href={`/products/${product.slug}`}
-                className="group bg-white hover:bg-cream transition-colors duration-200 flex flex-col overflow-hidden"
+                className="group bg-white hover:bg-white transition-colors duration-200 flex flex-col overflow-hidden"
               >
                 {/* Image */}
-                <div className="relative h-52 bg-fog/50 overflow-hidden">
+                <div className="relative h-52 bg-steel/50 overflow-hidden">
                   {imgObj?.url ? (
                     <Image
                       src={imgObj.url}
@@ -88,23 +88,22 @@ export function ProductsSection({ products }: Props) {
                 </div>
 
                 {/* Info */}
-                <div className="p-6 flex flex-col flex-1 border-t border-fog">
+                <div className="p-6 flex flex-col flex-1 border-t border-steel/30">
                   {product.category && (
-                    <p className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-gold mb-2">
+                    <p className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-steel mb-2">
                       {product.category}
                     </p>
                   )}
-                  <h3 className="font-heading text-xl font-semibold text-bark mb-2 leading-tight">
+                  <h3 className="font-heading text-[19px] font-semibold text-slate-dark mb-2 leading-tight">
                     {product.name}
                   </h3>
                   {product.shortDescription && (
-                    <p className="text-[13px] font-sans text-bark/55 line-clamp-2 leading-relaxed flex-1">
+                    <p className="text-[13px] font-sans text-slate-dark/55 line-clamp-2 leading-relaxed flex-1">
                       {product.shortDescription}
                     </p>
                   )}
-                  <div className="mt-4 flex items-center gap-2 text-[11px] font-sans font-semibold uppercase tracking-[0.14em] text-brand-green group-hover:text-brand-gold transition-colors">
-                    <span>View Details</span>
-                    <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                  <div className="mt-5 self-start rounded-md bg-steel px-6 py-3 text-[13px] font-sans font-semibold uppercase tracking-[0.1em] text-white transition-colors group-hover:bg-steel-dark">
+                    View Details
                   </div>
                 </div>
               </Link>

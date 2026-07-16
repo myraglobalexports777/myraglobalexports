@@ -37,9 +37,9 @@ export default async function ProductsPage({
   const { data: products } = await query
 
   return (
-    <div className="bg-cream min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Page hero */}
-      <div className="bg-brand-green py-20 relative overflow-hidden">
+      <div className="bg-navy py-20 relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -49,13 +49,13 @@ export default async function ProductsPage({
         />
         <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="flex items-center gap-4 mb-6">
-            <span className="block h-px w-10 bg-brand-gold shrink-0" />
-            <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-brand-gold/60">
+            <span className="block h-px w-10 bg-slate shrink-0" />
+            <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-steel/60">
               Product Range
             </p>
           </div>
           <h1
-            className="font-heading font-light text-white leading-tight mb-4"
+            className="font-heading font-semibold text-white leading-tight mb-4"
             style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)' }}
           >
             Our Products
@@ -67,7 +67,7 @@ export default async function ProductsPage({
       </div>
 
       {/* Category pills */}
-      <div className="border-b border-fog bg-white sticky top-[57px] z-30">
+      <div className="border-b border-steel/30 bg-white sticky top-[57px] z-30">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex gap-0 overflow-x-auto scrollbar-hide">
             {CATEGORIES.map((cat) => (
@@ -76,8 +76,8 @@ export default async function ProductsPage({
                 href={cat === 'All' ? '/products' : `/products?category=${encodeURIComponent(cat)}`}
                 className={`px-5 py-4 text-[11px] font-sans font-semibold uppercase tracking-[0.14em] shrink-0 border-b-2 transition-colors ${
                   (cat === 'All' && !category) || category === cat
-                    ? 'text-brand-green border-brand-gold'
-                    : 'text-bark/50 border-transparent hover:text-brand-green hover:border-brand-gold'
+                    ? 'text-navy border-steel'
+                    : 'text-slate-dark/50 border-transparent hover:text-navy hover:border-steel'
                 }`}
               >
                 {cat}
@@ -89,20 +89,20 @@ export default async function ProductsPage({
 
       {/* Products grid */}
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <p className="text-[11px] font-sans uppercase tracking-[0.2em] text-stone mb-8">
+        <p className="text-[11px] font-sans uppercase tracking-[0.2em] text-steel mb-8">
           Showing {products?.length ?? 0} products
         </p>
 
-        <div className="grid grid-cols-1 gap-px bg-fog sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px bg-steel/10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products?.map((product) => {
             const firstImage = (product.images as { url: string; alt?: string | null }[])?.[0]
             return (
               <Link
                 key={product.id}
                 href={`/products/${product.slug}`}
-                className="group bg-white hover:bg-cream transition-colors duration-200 flex flex-col overflow-hidden"
+                className="group bg-white hover:bg-white transition-colors duration-200 flex flex-col overflow-hidden"
               >
-                <div className="relative h-52 bg-fog/50 overflow-hidden">
+                <div className="relative h-52 bg-steel/50 overflow-hidden">
                   {firstImage?.url ? (
                     <Image
                       src={firstImage.url}
@@ -117,21 +117,21 @@ export default async function ProductsPage({
                     />
                   )}
                 </div>
-                <div className="p-6 flex flex-col flex-1 border-t border-fog">
+                <div className="p-6 flex flex-col flex-1 border-t border-steel/30">
                   {product.category && (
-                    <p className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-gold mb-2">
+                    <p className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-steel mb-2">
                       {product.category}
                     </p>
                   )}
-                  <h3 className="font-heading text-xl font-semibold text-bark mb-2 leading-tight">
+                  <h3 className="font-heading text-xl font-semibold text-slate-dark mb-2 leading-tight">
                     {product.name}
                   </h3>
                   {product.short_description && (
-                    <p className="text-[13px] font-sans text-bark/55 line-clamp-2 leading-relaxed flex-1">
+                    <p className="text-[13px] font-sans text-slate-dark/55 line-clamp-2 leading-relaxed flex-1">
                       {product.short_description}
                     </p>
                   )}
-                  <div className="mt-4 flex items-center gap-2 text-[11px] font-sans font-semibold uppercase tracking-[0.14em] text-brand-green group-hover:text-brand-gold transition-colors">
+                  <div className="mt-4 flex items-center gap-2 text-[11px] font-sans font-semibold uppercase tracking-[0.14em] text-navy group-hover:text-steel transition-colors">
                     <span>View Details</span>
                     <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                   </div>
@@ -143,31 +143,31 @@ export default async function ProductsPage({
       </div>
 
       {/* CTA banner */}
-      <div className="border-t border-fog bg-white py-16">
+      <div className="border-t border-steel/30 bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <h2
-                className="font-heading font-light text-brand-green leading-tight mb-3"
+                className="font-heading font-semibold text-navy leading-tight mb-3"
                 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
               >
                 Interested in<br />
-                <em className="italic text-brand-gold">Our Products?</em>
+                <span className=" text-steel">Our Products?</span>
               </h2>
-              <p className="text-bark/60 font-sans text-[15px] leading-relaxed">
+              <p className="text-slate-dark/60 font-sans text-[15px] leading-relaxed">
                 Send us an inquiry and receive a competitive quote within 24 hours.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 lg:justify-end">
               <Link
                 href="/get-quote"
-                className="bg-brand-green px-8 py-3.5 text-[12px] font-sans font-semibold uppercase tracking-[0.14em] text-white transition-all hover:bg-brand-gold"
+                className="rounded-md bg-slate px-8 py-3.5 text-[12px] font-sans font-semibold uppercase tracking-[0.14em] text-white transition-all hover:bg-slate-dark"
               >
                 Request a Quote
               </Link>
               <Link
                 href="/contact"
-                className="border border-bark/20 px-8 py-3.5 text-[12px] font-sans font-semibold uppercase tracking-[0.14em] text-bark/60 transition-all hover:border-brand-green hover:text-brand-green"
+                className="rounded-md border border-slate/20 px-8 py-3.5 text-[12px] font-sans font-semibold uppercase tracking-[0.14em] text-slate-dark/60 transition-all hover:border-navy hover:text-navy"
               >
                 Contact Us
               </Link>
